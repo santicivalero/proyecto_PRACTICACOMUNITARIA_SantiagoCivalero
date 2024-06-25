@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Question from '../Question/Question.jsx';
 import { getQuestion } from '../../data/asyncMock.js';
 import { ScoreContext } from '../../context/ScoreContext';
@@ -60,31 +59,16 @@ const QuestionContainer = () => {
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
   return (
-    <div>
-      {/* <TransitionGroup>
-        <CSSTransition
-          key={currentQuestionIndex}
-          timeout={300}
-          classNames={{
-            enter: styles.fadeEnter,
-            enterActive: styles.fadeEnterActive,
-            exit: styles.fadeExit,
-            exitActive: styles.fadeExitActive,
-          }}
-        > */}
-          <div>
-            {questions.length > 0 ? (
-              <Question
-                {...questions[currentQuestionIndex]}
-                onNext={handleNextQuestion}
-              />
-            ) : (
-              <p>Cargando...</p>
-            )}
-          </div>
-        {/* </CSSTransition>
-      </TransitionGroup> */}
-    </div>
+      <>
+        {questions.length > 0 ? (
+          <Question
+            {...questions[currentQuestionIndex]}
+            onNext={handleNextQuestion}
+          />
+        ) : (
+          <p className={styles.loading}>Cargando...</p>
+        )}
+      </>
   );
 };
 

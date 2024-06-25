@@ -12,21 +12,17 @@ const LevelSelector = () => {
 
   return (
     <div className={styles.levelSelector}>
-      <Link to='/quiz'>
-        <button>Primario</button>
+      <Link to='/playername'>
+        <button className={styles.levelButton}>Primario</button>
       </Link>
-      <Link to='/quiz'>
-        <button>Secundario</button>
+      <Link to='/playername'>
+        <button className={styles.levelButton}>Secundario</button>
       </Link>
     </div>
   );
 };
 
 export default LevelSelector;
-
-
-
-
 
 
 
@@ -46,32 +42,14 @@ export default LevelSelector;
 
 //   return (
 //     <div className={styles.levelSelector}>
-//       <Link to="/quiz">
+//       <Link to='/playername'>
 //         <button>Primario</button>
 //       </Link>
-//       <Link to="/quiz">
+//       <Link to='/playername'>
 //         <button>Secundario</button>
 //       </Link>
 //     </div>
 //   );
 // };
-
-// export default LevelSelector;
-
-
-
-
-
-
-// import styles from './LevelSelector.module.css';
-
-// const LevelSelector = () => {
-//   return (
-//     <div className={styles.levelSelector}>
-//       <button>Primario</button>
-//       <button>Secundario</button>
-//     </div>
-//   );
-// }
 
 // export default LevelSelector;
