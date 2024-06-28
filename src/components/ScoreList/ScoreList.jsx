@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ScoreList.module.css';
+import { Link } from 'react-router-dom';
 
 const ScoreList = () => {
   const [players, setPlayers] = useState([]);
@@ -13,6 +14,9 @@ const ScoreList = () => {
   return (
     <div className={styles.scoreListContainer}>
       <h2 className={styles.title}>Ranking de Puntajes</h2>
+      <button>
+      <Link to="/results">Volver a Resultados</Link>
+      </button>
       <ul className={styles.scoreList}>
         {players.map((player, index) => (
           <li key={player.name} className={styles.playerItem}>

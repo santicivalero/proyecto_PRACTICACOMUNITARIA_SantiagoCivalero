@@ -8,7 +8,7 @@ const LevelSelector = () => {
 
   useEffect(() => {
     resetScore();
-  }, [resetScore]);
+  }, []);
 
   return (
     <div className={styles.levelSelector}>
