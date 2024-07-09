@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ScoreContext } from '../../context/ScoreContext';
+import { Link } from 'react-router-dom';
 import styles from './PlayerName.module.css';
 
 const PlayerName = () => {
@@ -38,6 +39,9 @@ const PlayerName = () => {
         {error && <p className={styles.error}>{error}</p>}
         <button className={styles.button} type="submit">Continuar</button>
       </form>
+      <Link to="/">
+        <button className={styles.volverButton}>&lt;&lt; Volver</button>
+      </Link>
     </div>
   );
 };

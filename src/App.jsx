@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import TopBar from './components/TopBar/TopBar';
 import LevelSelector from './components/LevelSelector/LevelSelector';
 import QuestionContainer from './components/QuestionContainer/QuestionContainer';
 import Results from './components/Results/Results';
@@ -11,6 +12,8 @@ import { ScoreProvider } from './context/ScoreContext.jsx';
 
 function App() {
   return (
+    <>
+    <TopBar />
     <ScoreProvider>
       <BrowserRouter>
         <Routes>
@@ -23,6 +26,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ScoreProvider>
+    </>
   );
 }
 

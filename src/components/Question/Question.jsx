@@ -1,13 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Question.module.css';
 
-const Question = ({ title, options, onNext, timerExpired }) => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+const colors = [
+  '#3E64AC',
+  '#712D85',
+  '#E22B14',
+  '#EA672E',
+  '#FFDA1F',
+  '#35AC75',
+  '#5FC3E6'
+];
 
-  // Reiniciar selectedOptions cuando cambia la pregunta
+const getRandomColor = () => {
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+};
+
+const Question = ({ title, options, onNext, timerExpired, questionNumber, totalQuestions }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [backgroundColor, setBackgroundColor] = useState(getRandomColor());
+
+  // Reiniciar selectedOptions y cambiar el color de fondo cuando cambia la pregunta
   useEffect(() => {
     setSelectedOptions([]);
-  }, [title]); // Dependencia title para detectar cambio de pregunta
+    setBackgroundColor(getRandomColor());
+  }, [title]);
 
   const handleOptionChange = (event) => {
     const optionId = parseInt(event.target.value);
@@ -23,7 +40,10 @@ const Question = ({ title, options, onNext, timerExpired }) => {
   };
 
   return (
-    <div className={styles.questionContainer}>
+    <div className={styles.questionContainer} style={{ background: `radial-gradient(ellipse, #FFFFFF, ${backgroundColor})` }}>
+      <div className={styles.progress}>
+        {questionNumber}/{totalQuestions}
+      </div>
       <h2 className={styles.questionTitle}>{title}</h2>
       <ul className={styles.optionsList}>
         {options.map((option) => (
@@ -57,16 +77,33 @@ export default Question;
 
 
 
-// import React, { useState } from 'react';
-// import { useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+// import styles from './Question.module.css';
+
+// const colors = [
+//   '#3E64AC',
+//   '#712D85',
+//   '#E22B14',
+//   '#EA672E',
+//   '#FFDA1F',
+//   '#35AC75',
+//   '#5FC3E6'
+// ];
+
+// const getRandomColor = () => {
+//   const randomIndex = Math.floor(Math.random() * colors.length);
+//   return colors[randomIndex];
+// };
 
 // const Question = ({ title, options, onNext, timerExpired }) => {
 //   const [selectedOptions, setSelectedOptions] = useState([]);
+//   const [backgroundColor, setBackgroundColor] = useState(getRandomColor());
 
-//   // Reiniciar selectedOptions cuando cambia la pregunta
+//   // Reiniciar selectedOptions y cambiar el color de fondo cuando cambia la pregunta
 //   useEffect(() => {
 //     setSelectedOptions([]);
-//   }, [title]); // Dependencia title para detectar cambio de pregunta
+//     setBackgroundColor(getRandomColor());
+//   }, [title]);
 
 //   const handleOptionChange = (event) => {
 //     const optionId = parseInt(event.target.value);
@@ -82,20 +119,21 @@ export default Question;
 //   };
 
 //   return (
-//     <div>
-//       <h2>{title}</h2>
-//       <ul>
+//     <div className={styles.questionContainer} style={{ background: `radial-gradient(ellipse, #FFFFFF, ${backgroundColor})` }}>
+//       <h2 className={styles.questionTitle}>{title}</h2>
+//       <ul className={styles.optionsList}>
 //         {options.map((option) => (
-//           <li key={option.id}>
-//             <label>
+//           <li key={option.id} className={styles.optionItem}>
+//             <label className={styles.optionLabel}>
 //               <input
 //                 type="checkbox"
 //                 value={option.id}
 //                 checked={selectedOptions.includes(option.id)}
 //                 onChange={handleOptionChange}
+//                 className={styles.optionInput}
 //               />{' '}
 //               {option.answerText.startsWith('../') ? (
-//                 <img src={option.answerText} alt="option" width="150" height="150" />
+//                 <img src={option.answerText} alt="option" className={styles.optionImage} />
 //               ) : (
 //                 option.answerText
 //               )}
@@ -103,7 +141,7 @@ export default Question;
 //           </li>
 //         ))}
 //       </ul>
-//       <button onClick={handleNextClick} disabled={selectedOptions.length === 0}>
+//       <button onClick={handleNextClick} disabled={selectedOptions.length === 0} className={styles.nextButton}>
 //         Siguiente
 //       </button>
 //     </div>
