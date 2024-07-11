@@ -6,6 +6,7 @@ export const ScoreProvider = ({ children }) => {
   const [score, setScore] = useState(0);
   const [playerName, setPlayerName] = useState('');
   const [answers, setAnswers] = useState([]);
+  const [level, setLevel] = useState(''); // Nuevo estado para el nivel
 
   const addPoints = (points, question, selectedOptions) => {
     setScore(prevScore => Math.max(0, (prevScore + points).toFixed(2)));
@@ -33,15 +34,11 @@ export const ScoreProvider = ({ children }) => {
   };
 
   return (
-    <ScoreContext.Provider value={{ score, addPoints, resetScore, playerName, setPlayerName, saveScoreToLocalStorage, answers }}>
+    <ScoreContext.Provider value={{ score, addPoints, resetScore, playerName, setPlayerName, saveScoreToLocalStorage, answers, level, setLevel }}>
       {children}
     </ScoreContext.Provider>
   );
 };
-
-
-
-
 
 
 
@@ -52,19 +49,23 @@ export const ScoreProvider = ({ children }) => {
 // export const ScoreProvider = ({ children }) => {
 //   const [score, setScore] = useState(0);
 //   const [playerName, setPlayerName] = useState('');
-//   const [selectedAnswers, setSelectedAnswers] = useState([]);
+//   const [answers, setAnswers] = useState([]);
 
-//   const addPoints = (points) => {
+//   const addPoints = (points, question, selectedOptions) => {
 //     setScore(prevScore => Math.max(0, (prevScore + points).toFixed(2)));
+//     setAnswers(prevAnswers => [
+//       ...prevAnswers,
+//       {
+//         ...question,
+//         selectedOptions,
+//         pointsObtained: points,
+//       }
+//     ]);
 //   };
 
 //   const resetScore = () => {
 //     setScore(0);
-//     setSelectedAnswers([]);
-//   };
-
-//   const saveSelectedAnswer = (questionId, selectedOptions) => {
-//     setSelectedAnswers(prevAnswers => [...prevAnswers, { questionId, selectedOptions }]);
+//     setAnswers([]);
 //   };
 
 //   const saveScoreToLocalStorage = () => {
@@ -76,7 +77,7 @@ export const ScoreProvider = ({ children }) => {
 //   };
 
 //   return (
-//     <ScoreContext.Provider value={{ score, addPoints, resetScore, playerName, setPlayerName, saveScoreToLocalStorage, selectedAnswers, saveSelectedAnswer }}>
+//     <ScoreContext.Provider value={{ score, addPoints, resetScore, playerName, setPlayerName, saveScoreToLocalStorage, answers }}>
 //       {children}
 //     </ScoreContext.Provider>
 //   );

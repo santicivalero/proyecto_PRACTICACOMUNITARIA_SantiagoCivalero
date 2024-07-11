@@ -1,15 +1,15 @@
 const questions = [
     {
         id: 1,
-        title: '¿Cuál es un color primario?',
+        title: '¿Qué es una cooperativa?',
         options: [
-            { id: 1, answerText: 'Rojo', correct: true },
-            { id: 2, answerText: 'Verde', correct: false },
-            { id: 3, answerText: 'Naranja', correct: false },
-            { id: 4, answerText: 'Cian', correct: false },
+            { id: 1, answerText: 'Una sociedad de beneficiencia.', correct: false },
+            { id: 2, answerText: 'Una asociación de personas por medio de una empresa de propiedad conjunta.', correct: true },
+            { id: 3, answerText: 'Una entidad organizada solidariamente para prestar servicios a sus miembros.', correct: true },
+            { id: 4, answerText: 'Un organismo autónomo y autárquico del Estado.', correct: false },
         ],
         pointsPerCorrectAnswer: 1,
-        explanation: 'Rojo, junto con azul y amarillo, son colores primarios. Verde, naranja y violeta son colores secundarios.',
+        explanation: 'Las cooperativas no pertenecen al Estado ni son sociedades de beneficiencia. Son empresas que buscan beneficiar económicamente a todos sus asociados.',
     },
     {
         id: 2,
@@ -65,27 +65,40 @@ const questions = [
     },
     {
         id: 6,
-        title: '¿Está bien tirar el aceite de cocina por el desagüe?',
+        title: '¿Qué puede suceder al tirar aceite de cocina por el desagüe?',
         options: [
-            { id: 1, answerText: 'Sí, siempre que no esté quemado', correct: false },
-            { id: 2, answerText: 'No, nunca se debe tirar por el desagüe', correct: true },
-            { id: 3, answerText: 'Sí, pero desde la cocina y no desde el baño o el lavadero', correct: false },
+            { id: 1, answerText: 'El aceite se mezcla con otras sustancias que discurren por las tuberías, provocando atascos y malos olores', correct: true },
+            { id: 2, answerText: 'Se crea una capa o barrera en la superficie del agua evitando el intercambio de oxígeno, lo cual perjudica ecosistemas.', correct: true },
+            { id: 3, answerText: 'Se crea una capa o barrera en la superficie del agua desfavoreciendo la fotosíntesis, ya que se absorbe la radiación solar.', correct: true },
+            { id: 4, answerText: 'El aceite se solidifica y tapa los desagües.', correct: true },
         ],
         pointsPerCorrectAnswer: 1,
-        explanation: 'Sólo un litro de aceite puede contaminar más de mil litros de agua.'
+        explanation: 'Todas son correctas. Sólo un litro de aceite puede contaminar más de mil litros de agua.'
     },
     {
         id: 7,
-        title: 'Si estoy afuera y tengo un pañuelo descartable usado o un envoltorio de caramelo, ¿qué debo hacer?',
+        title: '¿Cuáles de los siguientes son los seis valores del cooperativismo?',
         options: [
-            { id: 1, answerText: 'Lo tiro detrás de un arbusto o en un terreno baldío', correct: false },
-            { id: 2, answerText: 'Lo tiro en un volquete o en el canasto de algún vecino', correct: false },
-            { id: 3, answerText: 'Lo guardo y luego lo tiro en casa', correct: true },
-            { id: 4, answerText: 'Lo tiro en el suelo', correct: false },
-            { id: 5, answerText: 'Lo tiro en un cesto público', correct: true },
+            { id: 1, answerText: 'Justicia', correct: false },
+            { id: 2, answerText: 'Amistad', correct: false },
+            { id: 3, answerText: 'Democracia', correct: true },
+            { id: 4, answerText: 'Igualdad', correct: true },
+            { id: 5, answerText: 'Propiedad privada', correct: false },
+            { id: 6, answerText: 'Vida', correct: false },
+            { id: 7, answerText: 'Avaricia', correct: false },
+            { id: 8, answerText: 'Espiritualidad', correct: false },
+            { id: 9, answerText: 'Paz', correct: false },
+            { id: 10, answerText: 'Libertad', correct: false },
+            { id: 11, answerText: 'Ayuda mutua', correct: true },
+            { id: 12, answerText: 'Responsabilidad', correct: true },
+            { id: 13, answerText: 'Familia', correct: false },
+            { id: 14, answerText: 'Solidaridad', correct: true },
+            { id: 15, answerText: 'Cultura', correct: false },
+            { id: 16, answerText: 'Trabajo', correct: false },
+            { id: 17, answerText: 'Equidad', correct: true },
         ],
         pointsPerCorrectAnswer: 1,
-        explanation: 'La acumulación de basura puede causar varios problemas como olor, suciedad y plagas.'
+        explanation: 'Si bien algunos de los otros conceptos están relacionados, tradicionalmente esos son los valores del cooperativismo.'
     },
     {
         id: 8,
@@ -119,7 +132,7 @@ const questions = [
         title: '¿Cuáles de estos colores no son del cooperativismo?',
         options: [
             { id: 1, answerText: 'Verde', correct: false },
-            { id: 2, answerText: 'Negro', correct: false },
+            { id: 2, answerText: 'Negro', correct: true },
             { id: 3, answerText: 'Azul', correct: false },
             { id: 4, answerText: 'Rojo', correct: false },
             { id: 5, answerText: 'Violeta', correct: false },
@@ -131,7 +144,7 @@ const questions = [
             { id: 11, answerText: 'Celeste', correct: false },
         ],
         pointsPerCorrectAnswer: 1,
-        explanation: 'Los colores del cooperativismo son los 7 del arcoiris: rojo, naranja, amarillo, verde, azul, índigo (o añil) y violeta.',
+        explanation: 'Los colores del cooperativismo son los del arcoiris.',
     },
     {
         id: 11,
@@ -147,13 +160,21 @@ const questions = [
     },
     {
         id: 12,
-        title: '¿En el inodoro sólo se debe arrojar desechos humanos y papel higiénico?',
+        title: '¿Qué tipo de cooperativa es Corpico?',
         options: [
-            { id: 1, answerText: 'No', correct: false },
-            { id: 2, answerText: 'Sí', correct: true },
+            { id: 1, answerText: 'Cooperativa de consumo', correct: false },
+            { id: 2, answerText: 'Cooperativa agraria', correct: false },
+            { id: 3, answerText: 'Cooperativa de trabajo', correct: false },
+            { id: 4, answerText: 'Cooperativa de crédito', correct: false },
+            { id: 5, answerText: 'Cooperativa de vivienda', correct: false },
+            { id: 6, answerText: 'Cooperativa de servicios públicos', correct: true },
+            { id: 7, answerText: 'Cooperativa de seguros', correct: false },
+            { id: 8, answerText: 'Cooperativa de provisión', correct: false },
+            { id: 9, answerText: 'Administración pública cooperativa (Régie Coopérative)', correct: false },
+            { id: 10, answerText: 'Cooperativa escolar', correct: false },
         ],
         pointsPerCorrectAnswer: 1,
-        explanation: 'Otras cosas pueden provocar bloqueos en las tuberías',
+        explanation: 'Corpico es una cooperativa de servicios públicos. Brinda servicio eléctrico, agua y saneamiento urbano, comunicaciones, transporte, biblioteca, enfermería, gas envasado y sepelio.',
     },
     {
         id: 13,

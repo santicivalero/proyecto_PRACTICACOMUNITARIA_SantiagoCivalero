@@ -14,9 +14,9 @@ const ScoreList = () => {
   return (
     <div className={styles.scoreListContainer}>
       <h2 className={styles.title}>Ranking de Puntajes</h2>
-      <button>
-      <Link to="/results">Volver a Resultados</Link>
-      </button>
+      <div>
+      <Link to="/results" className={styles.link}>Volver a Resultados</Link>
+      </div>
       <ul className={styles.scoreList}>
         {players.map((player, index) => (
           <li key={player.name} className={styles.playerItem}>

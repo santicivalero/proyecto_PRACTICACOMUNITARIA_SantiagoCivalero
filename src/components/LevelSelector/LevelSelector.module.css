@@ -116,3 +116,67 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+@media (max-width: 1200px) {
+  .levelSelector {
+    padding: 20px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+  .levelButton, .instructionsButton {
+    width: 180px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .levelSelector {
+    padding: 15px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .levelButton, .instructionsButton {
+    width: 160px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .levelSelector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .levelButton,
+  .instructionsButton {
+    width: 160px;
+    font-size: 12px;
+  }
+
+  .instructions {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+
