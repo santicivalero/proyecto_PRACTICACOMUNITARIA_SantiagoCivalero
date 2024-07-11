@@ -36,7 +36,7 @@ const Answers = () => {
       </div>
       <p className={styles.info}>
         <span className={styles.score}>Puntaje obtenido: {score}/{questionLength}</span>
-        <span className={styles.selectedOption}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Celeste: Tu respuesta</span>
+        <span className={styles.selectedOption}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Azul: Tu respuesta</span>
       </p>
       {answers.map((question, index) => (
         <div key={index} className={styles.questionContainer}>

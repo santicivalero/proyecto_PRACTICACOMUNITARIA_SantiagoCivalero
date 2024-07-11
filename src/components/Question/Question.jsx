@@ -20,7 +20,6 @@ const Question = ({ title, options, onNext, timerExpired, questionNumber, totalQ
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [backgroundColor, setBackgroundColor] = useState(getRandomColor());
 
-  // Reiniciar selectedOptions y cambiar el color de fondo cuando cambia la pregunta
   useEffect(() => {
     setSelectedOptions([]);
     setBackgroundColor(getRandomColor());

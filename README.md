@@ -1,8 +1,12 @@
-# React + Vite
+### Proyecto de Práctica Comunitaria
+- Se trata de un juego web en formato de cuestionario, hecho en el marco de la asignatura "Práctica Comunitaria" de la carrera Analista Programador de la Universidad Nacional de La Pampa (UNLPam) y para la Biblioteca de la cooperativa de General Pico (Corpico).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- El jugador elige su nivel escolar (primario o secundario), se le presentan preguntas, para las que deberá seleccionar la o las opciones que considere correctas, y, una vez que las responde, obtiene su puntaje. Asimismo, tiene acceso a un ranking y a la explicación de las preguntas.
 
-Currently, two official plugins are available:
+- La temática es cooperativismo, cuidado del agua y del medio ambiente, y algo de cultura general.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- El proyecto está elaborado únicamente en Frontend, con React+Vite. Está pensado para que otros estudiantes puedan continuarlo, incorporando el Backend, y así cumplir sus horas de práctica exigidas por la asignatura.
+
+- La siguiente incorporación deseada es dinamismo en las preguntas, es decir, que desde la Biblioteca puedan agregar, eliminar o editar preguntas. También podrían añadirse estadísticas, manipulación de parámetros de puntaje e incluso replantear la estética del sitio.
+
+- Autor: Santiago Civalero
