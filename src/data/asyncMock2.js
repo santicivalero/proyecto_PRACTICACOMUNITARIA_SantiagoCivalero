@@ -34,7 +34,7 @@ const questions = [
             { id: 3, answerText: 'La Plata', correct: true },
             { id: 4, answerText: 'Rosario', correct: false },
             { id: 5, answerText: 'Santa Fe', correct: true },
-            { id: 6, answerText: 'Tucumán', correct: true },
+            { id: 6, answerText: 'Neuquén', correct: true },
             { id: 7, answerText: 'Entre Ríos', correct: false },
         ],
         pointsPerCorrectAnswer: 1,
